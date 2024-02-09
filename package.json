@@ -1,0 +1,14 @@
+{
+  "name": "system-architecture",
+  "version": "1.0.0",
+  "description": "This is an repo for system architecture",
+  "scripts": {
+    "start": "concurrently \"cd ./frontend && yarn start\" \"cd ./backend && yarn start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
