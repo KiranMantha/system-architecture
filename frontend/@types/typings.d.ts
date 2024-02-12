@@ -1,3 +1,9 @@
+declare module globalThis {
+  interface Window {
+    __RUNTIME_CONFIG__: Record<string, string>;
+  }
+}
+
 interface HTMLElement {
   trigger: (eventName: string, isBubbling?: boolean) => void;
   update: () => void;

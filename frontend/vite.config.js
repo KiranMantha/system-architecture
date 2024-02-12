@@ -1,36 +1,53 @@
 /// <reference types="vitest" />
 import { visualizer } from 'rollup-plugin-visualizer';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig({
-  base: '',
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-    rollupOptions: {
-      plugins: [
-        visualizer({
-          title: 'Plumejs example repo',
-          open: true
-        })
-      ]
+const htmlPlugin = (envVars) => {
+  return {
+    name: 'html-transform',
+    transformIndexHtml(html) {
+      return html.replace(/%(.*?)%/g, function (match, p1) {
+        return envVars[p1];
+      });
     }
-  },
-  server: {
-    host: true,
-    port: 3001,
-    open: '/'
-  },
-  test: {
-    globals: true,
-    environment: 'happy-dom',
-    deps: {
-      inline: true
+  };
+};
+
+export default ({ mode }) => {
+  const PUBLIC_FOLDER = mode === 'production' ? '' : 'src';
+  const envVars = { ...process.env, ...loadEnv(mode, ''), PUBLIC_FOLDER };
+  console.log(envVars);
+  return defineConfig({
+    base: '',
+    plugins: [htmlPlugin(envVars)],
+    build: {
+      outDir: 'dist',
+      sourcemap: false,
+      rollupOptions: {
+        plugins: [
+          visualizer({
+            title: 'Plumejs example repo',
+            open: true
+          })
+        ]
+      }
     },
-    coverage: {
-      reporter: ['text', 'json', 'html'], 
-      cleanOnRerun: true, 
-      reportsDirectory: 'coverage'
+    server: {
+      host: true,
+      port: 3001,
+      open: '/'
+    },
+    test: {
+      globals: true,
+      environment: 'happy-dom',
+      deps: {
+        inline: true
+      },
+      coverage: {
+        reporter: ['text', 'json', 'html'],
+        cleanOnRerun: true,
+        reportsDirectory: 'coverage'
+      }
     }
-  }
-});
+  });
+};

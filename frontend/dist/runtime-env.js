@@ -1,0 +1,1 @@
+window.__RUNTIME_CONFIG__ = {"PLUME_SAMPLE_ENV_VARIABLE":" \"this is a sample env variable\""};
