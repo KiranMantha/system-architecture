@@ -12,7 +12,7 @@
     "lint": "eslint . --ext .ts --fix"
   },
   "dependencies": {
-    "@plumejs/core": "^4.0.2",
+    "@plumejs/core": "^4.1.1",
     "cross-env": "^7.0.3",
     "runtime-env-cra": "^0.2.4",
     "serve": "^14.2.1"
