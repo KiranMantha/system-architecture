@@ -16,7 +16,6 @@ const htmlPlugin = (envVars) => {
 export default ({ mode }) => {
   const PUBLIC_FOLDER = mode === 'production' ? '' : 'src';
   const envVars = { ...process.env, ...loadEnv(mode, ''), PUBLIC_FOLDER };
-  console.log(envVars);
   return defineConfig({
     base: '',
     plugins: [htmlPlugin(envVars)],

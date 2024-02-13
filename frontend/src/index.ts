@@ -1,8 +1,12 @@
-import { Component, html } from '@plumejs/core';
+import { Component, html, render } from '@plumejs/core';
 // as per https://github.com/vitejs/vite/pull/2148
+// import { setupWorker } from 'msw/browser';
 import { HttpService } from './api';
 import { ConfigService } from './config';
+// import { mockHandlers } from './mocks';
 import styles from './styles/base.scss?inline';
+
+// setupWorker(...mockHandlers).start();
 
 @Component({
   selector: 'app-root',
@@ -33,3 +37,7 @@ export class AppComponent {
     `;
   }
 }
+
+setTimeout(() => {
+  render(document.getElementById('root'), html`<app-root></app-root>`);
+}, 100);
