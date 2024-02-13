@@ -1,5 +1,6 @@
 import { Component, html } from '@plumejs/core';
 // as per https://github.com/vitejs/vite/pull/2148
+import { HttpService } from './api';
 import { ConfigService } from './config';
 import styles from './styles/base.scss?inline';
 
@@ -7,10 +8,20 @@ import styles from './styles/base.scss?inline';
   selector: 'app-root',
   styles: styles,
   root: true,
-  deps: [ConfigService]
+  deps: [ConfigService, HttpService]
 })
 export class AppComponent {
-  constructor(private configService: ConfigService) {}
+  constructor(
+    private configService: ConfigService,
+    private http: HttpService
+  ) {}
+
+  mount() {
+    this.http.get<Array<unknown>>('users').then((data) => {
+      console.log(data);
+    });
+  }
+
   render() {
     return html`
       <main class="container center">
