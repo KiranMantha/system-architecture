@@ -1,4 +1,4 @@
-import { Injectable } from '@plumejs/core';
+import { Injectable } from "@plumejs/core";
 
 @Injectable()
 export class ConfigService {

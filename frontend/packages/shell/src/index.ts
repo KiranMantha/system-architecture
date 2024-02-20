@@ -1,9 +1,8 @@
 import { Component, html, render } from '@plumejs/core';
 // as per https://github.com/vitejs/vite/pull/2148
+import { ConfigService, HttpService } from '@frontend/common';
 import { Router } from '@plumejs/router';
 import { setupWorker } from 'msw/browser';
-import { HttpService } from './api';
-import { ConfigService } from './config';
 import { mockHandlers } from './mocks';
 import styles from './styles/base.scss?inline';
 

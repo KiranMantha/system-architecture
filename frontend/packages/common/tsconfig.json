@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "lib": ["DOM", "ESNext"],
+    "importHelpers": true,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "typeRoots": ["@types", "node_modules/@types"]
+  }
+}
