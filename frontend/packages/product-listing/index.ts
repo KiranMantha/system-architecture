@@ -1,2 +1,2 @@
-import "./src/listingContainer";
-export * from "./src/listingContainer";
+import "./src/productListingContainer";
+export * from "./src/productListingContainer";

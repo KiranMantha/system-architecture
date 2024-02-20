@@ -5,9 +5,9 @@ import { Component, html } from "@plumejs/core";
 })
 export default class ProductListing {
   render() {
-    return html`<div>
-      <h2>This is product listing contianer</h2>
+    return html`<fieldset>
+      <legend>This is product listing contianer</legend>
       <p>this is delivered from @frontend/product-listing package</p>
-    </div>`;
+    </fieldset>`;
   }
 }
