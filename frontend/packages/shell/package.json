@@ -14,9 +14,10 @@
     "msw": "msw init public --save"
   },
   "dependencies": {
-    "@frontend/product-listing": "*",
     "@frontend/product-details": "*",
+    "@frontend/product-listing": "*",
     "@plumejs/core": "^4.1.1",
+    "@plumejs/router": "^4.1.1",
     "cross-env": "^7.0.3",
     "runtime-env-cra": "^0.2.4",
     "serve": "^14.2.1"
