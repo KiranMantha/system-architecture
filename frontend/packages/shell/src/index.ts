@@ -4,6 +4,7 @@ import { Component, html, render } from '@plumejs/core';
 import { HttpService } from './api';
 import { ConfigService } from './config';
 // import { mockHandlers } from './mocks';
+import '@frontend/product-listing';
 import styles from './styles/base.scss?inline';
 
 // setupWorker(...mockHandlers).start();
@@ -33,6 +34,7 @@ export class AppComponent {
         <h1>Welcome to PlumeJS</h1>
         <p>example env variable: ${this.configService.get<string>('PLUME_SAMPLE_ENV_VARIABLE')}</p>
         <p>Please check <a href="https://github.com/KiranMantha/plumejs">here</a> for documentation</p>
+        <app-product-listing></app-product-listing>
       </main>
     `;
   }
