@@ -1,4 +1,4 @@
-import { TestBed, Fixture } from '@plumejs/core';
+import { Fixture, TestBed } from '@plumejs/testing';
 import { AppComponent } from './index';
 
 describe('@plumejs/core Component', () => {

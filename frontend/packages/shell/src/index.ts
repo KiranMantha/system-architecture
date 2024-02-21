@@ -2,11 +2,11 @@ import { Component, html, render } from '@plumejs/core';
 // as per https://github.com/vitejs/vite/pull/2148
 import { ConfigService, HttpService } from '@frontend/common';
 import { Router } from '@plumejs/router';
-import { setupWorker } from 'msw/browser';
-import { mockHandlers } from './mocks';
+// import { setupWorker } from 'msw/browser';
+// import { mockHandlers } from './mocks';
 import styles from './styles/base.scss?inline';
 
-setupWorker(...mockHandlers).start();
+// setupWorker(...mockHandlers).start();
 
 @Component({
   selector: 'app-root',
@@ -37,13 +37,13 @@ export class AppComponent {
     private http: HttpService,
     private router: Router
   ) {
-    Router.registerRoutes({routes: this.routes});
+    Router.registerRoutes({ routes: this.routes });
   }
 
   mount() {
-    this.http.get<Array<unknown>>('users').then((data) => {
-      console.log(data);
-    });
+    // this.http.get<Array<unknown>>('users').then((data) => {
+    //   console.log(data);
+    // });
   }
 
   navigate(e: Event, path: string) {

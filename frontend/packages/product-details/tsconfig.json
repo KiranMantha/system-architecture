@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "typeRoots": ["@types", "node_modules/@types"]
-  }
+    "sourceMap": true
+  },
+  "include": ["../../@types/**/*.d.ts", "**/*.ts", "**/*.tsx"]
 }

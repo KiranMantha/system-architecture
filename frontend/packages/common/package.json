@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "rimraf dist && tsc"
   },
   "author": "",
   "license": "ISC",

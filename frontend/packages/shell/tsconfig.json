@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist",
     "target": "esnext",
     "moduleResolution": "node",
     "module": "esnext",
@@ -12,8 +11,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "typeRoots": ["@types", "node_modules/@types"]
-  }
+    "sourceMap": true
+  },
+  "include": ["../../@types/**/*.d.ts", "**/*.ts", "**/*.tsx"]
 }
