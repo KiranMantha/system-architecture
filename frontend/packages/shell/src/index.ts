@@ -12,30 +12,30 @@ import styles from './styles/base.scss?inline';
   selector: 'app-root',
   styles: styles,
   root: true,
-  deps: [ConfigService, HttpService, Router]
+  deps: [ConfigService, HttpService, Router],
 })
 export class AppComponent {
   routes = [
     {
       path: '',
-      redirectTo: '/products'
+      redirectTo: '/products',
     },
     {
       path: '/products',
       template: '<app-product-listing></app-product-listing>',
-      templatePath: () => import('@frontend/product-listing')
+      templatePath: () => import('@frontend/product-listing'),
     },
     {
       path: '/cart',
       template: '<app-product-details></app-product-details>',
-      templatePath: () => import('@frontend/product-details')
-    }
+      templatePath: () => import('@frontend/product-details'),
+    },
   ];
 
   constructor(
     private configService: ConfigService,
     private http: HttpService,
-    private router: Router
+    private router: Router,
   ) {
     Router.registerRoutes({ routes: this.routes });
   }
@@ -56,13 +56,30 @@ export class AppComponent {
       <main class="container center">
         <img src="./images/logo.jpg" />
         <h1>Welcome to PlumeJS</h1>
-        <p>example env variable: ${this.configService.get<string>('PLUME_SAMPLE_ENV_VARIABLE')}</p>
-        <p>Please check <a href="https://github.com/KiranMantha/plumejs">here</a> for documentation</p>
+        <p>
+          example env variable:
+          ${this.configService.get<string>('PLUME_SAMPLE_ENV_VARIABLE')}
+        </p>
+        <p>
+          Please check
+          <a href="https://github.com/KiranMantha/plumejs">here</a> for
+          documentation
+        </p>
         <header class="layout sticky-header">
           <nav>
             <ul>
-              <li><a href="#" onclick=${(e) => this.navigate(e, '/products')}>Products</a></li>
-              <li><a href="#" onclick=${(e) => this.navigate(e, '/cart')}>Cart</a></li>
+              <li>
+                <a
+                  href="#"
+                  onclick=${(e: Event) => this.navigate(e, '/products')}
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick=${(e: Event) => this.navigate(e, '/cart')}
+                  >Cart</a
+                >
+              </li>
             </ul>
           </nav>
         </header>

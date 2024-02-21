@@ -1,13 +1,11 @@
-# plumejs-vite-template
-[PlumeJS](https://www.npmjs.com/package/@plumejs/core) template with vite bundler
+# shell
 
-## To run the app
-`npm run start`
+This library was generated with [Nx](https://nx.dev).
 
-## To build app
-`npm run build`
+## Building
 
-## To run unit tests
-`npm run test`
+Run `nx build shell` to build the library.
 
-For unit tests documentation visit [Vitest](https://vitest.dev/)
+## Running unit tests
+
+Run `nx test shell` to execute the unit tests via [Vitest](https://vitest.dev/).

@@ -75,3 +75,7 @@ your-monorepo/
    a. `import '@<your-scope-package-name>/<your-lib-name>'` for component lib
    b. `import { <your-service> } from '@<your-scope-package-name>/<your-lib-name>'` for service lib
 8. this is the basic configuration steps to add the lib and consume
+
+### Reference links
+
+- https://nx.dev/getting-started/tutorials/integrated-repo-tutorial

@@ -21,6 +21,7 @@ export class HttpService {
   ): Promise<R> {
     const options = {
       method,
+      body: ''
     };
     if (method === "post") {
       options["body"] = JSON.stringify(payload || {});

@@ -1,0 +1,30 @@
+{
+  "name": "product-details",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/product-details/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/product-details",
+        "main": "packages/product-details/src/index.ts",
+        "tsConfig": "packages/product-details/tsconfig.lib.json",
+        "assets": ["packages/product-details/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs product-details {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/packages/product-details"
+      }
+    }
+  },
+  "tags": []
+}

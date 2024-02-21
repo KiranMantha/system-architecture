@@ -16,7 +16,7 @@ export default class ProductListing {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
       console.log(data);
-      this.products = data.data;
+      this.products = data;
     }
   }
   render() {
