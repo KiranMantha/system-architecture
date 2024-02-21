@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx dev @frontend/shell",
+    "build": "nx run-many --target=build",
     "graph": "nx graph"
   },
   "private": true,
