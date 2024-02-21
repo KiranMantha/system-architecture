@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc && copyfiles src/**/*.scss dist"
   },
   "keywords": [],
   "author": "",
