@@ -210,9 +210,7 @@ your-monorepo/
 8. the new component / service will start reflecting in ui.
 9. this is the basic configuration steps to create the `lib` and consume it in `shell`
 
-### Setting up common custom typings
-
-<hr />
+## Setting up common custom typings
 
 1. create a folder `@types` at monorepo root
 2. create `typings.d.ts` and add below typings:
