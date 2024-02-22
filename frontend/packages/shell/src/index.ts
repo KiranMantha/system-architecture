@@ -17,7 +17,7 @@ import styles from './styles/base.scss?inline';
 export class AppComponent {
   routes = [
     {
-      path: '',
+      path: '/',
       redirectTo: '/products',
     },
     {

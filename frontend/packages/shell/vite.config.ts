@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { defineConfig, loadEnv } from 'vite';
 import dts from 'vite-plugin-dts';
 
-const filesNeedToExclude = ["src/mocks/*"];
+const filesNeedToExclude = ['src/mocks/*'];
 
 const filesPathToExclude = filesNeedToExclude.map((src) => {
   return fileURLToPath(new URL(src, import.meta.url));
@@ -18,12 +18,11 @@ const htmlPlugin = (envVars: Record<string, string>) => {
       return html.replace(/%(.*?)%/g, function (match, p1) {
         return envVars[p1];
       });
-    }
+    },
   };
 };
 
-export default ({mode}: {mode: string}) => {
-
+export default ({ mode }: { mode: string }) => {
   const PUBLIC_FOLDER = mode === 'production' ? '' : 'src';
   const envVars = { ...process.env, ...loadEnv(mode, ''), PUBLIC_FOLDER };
 
@@ -36,8 +35,9 @@ export default ({mode}: {mode: string}) => {
       nxViteTsPaths(),
       dts({
         entryRoot: 'src',
-        tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-        skipDiagnostics: true,
+        // tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
+        tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+        // skipDiagnostics: true,
       }),
     ],
 
@@ -51,6 +51,7 @@ export default ({mode}: {mode: string}) => {
     build: {
       outDir: '../../dist/packages/shell',
       reportCompressedSize: true,
+      sourcemap: false,
       commonjsOptions: {
         transformMixedEsModules: true,
       },
@@ -62,7 +63,7 @@ export default ({mode}: {mode: string}) => {
     server: {
       host: true,
       port: 3001,
-      open: '/'
+      open: '/',
     },
     test: {
       globals: true,
@@ -79,4 +80,4 @@ export default ({mode}: {mode: string}) => {
       },
     },
   });
-}
+};
