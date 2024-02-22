@@ -287,6 +287,20 @@ declare module "*.scss?inline" {
 
 4. this should suffice to run the applciation. if you need to add a custom declaration to a npm module then create a folder with that module name with index.d.ts and add the declarations to it.
 
+The folder structure should look like below:
+
+```
+your-monorepo/
+├── @types/
+│   └── typings.d.ts
+├── packages/
+│   ├── lib1
+│   ├── lib2
+│   └── shell
+├── tsconfig.base.json
+└── nx.json
+```
+
 ## Reference links
 
 - https://nx.dev/getting-started/tutorials/integrated-repo-tutorial
