@@ -13,6 +13,8 @@ Ports:
 
 ## Implementation
 
+<hr />
+
 Frontend is built on [PlumeJS](https://www.npmjs.com/package/@plumejs/core) and nx integrated monorepo.
 
 The monorepo consists of a root `shell` folder which initiates the frontend application. It imports components from different lib folders (any folder other than `shell` is a lib folder) based on name defined in their respective `package.json` file as scoped package.
@@ -23,12 +25,16 @@ A helper functions based library don't have to rely on PlumeJS but solely on typ
 
 ### Steps to create a NX and PlumeJS based monorepo
 
+<hr />
+
 1. run `npx create-nx-workspace@latest <your-monorepo-name> --preset=ts`
 2. run `npm i @plumejs/core -s`
 3. run `npm i sass -D`
 4. after completion, create new `packages` folder in above monorepo.
 
 #### Create Shell
+
+<hr />
 
 1. navigate to `packages` folder in monorepo and create the `shell` using below commands:
 
@@ -169,6 +175,8 @@ This is a 1 time process to setup the `shell`. once it is done, we can create va
 
 #### To create a lib
 
+<hr />
+
 1. navigate to `packages` folders in terminal.
 2. run the below commands to create the lib:
 
@@ -203,6 +211,8 @@ your-monorepo/
 9. this is the basic configuration steps to create the `lib` and consume it in `shell`
 
 ### Setting up common custom typings
+
+<hr />
 
 1. create a folder `@types` at monorepo root
 2. create `typings.d.ts` and add below typings:
