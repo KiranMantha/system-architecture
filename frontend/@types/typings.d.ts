@@ -9,7 +9,7 @@ interface HTMLElement {
 }
 
 interface Window {
-  //   XMLHttpRequest: jest.Mock<any, any>;
+  XMLHttpRequest: jest.Mock<any, any>;
   returnMockHttpResponse: (response: any) => void;
   MutationObserver: any;
   WebKitMutationObserver: any;
@@ -28,7 +28,7 @@ interface fetch {
   mockResponseOnce: (mockResponse: string) => void;
 }
 
-declare module "*.css" {
+declare module '*.css' {
   const content: any;
   // using style-loader will result in an object which is incompatible
   // hence use only css-loader and sass-loader which result in proper compiled css array
@@ -37,7 +37,7 @@ declare module "*.css" {
   export default content;
 }
 
-declare module "*.scss" {
+declare module '*.scss' {
   const content: any;
   // using style-loader will result in an object which is incompatible
   // hence use only css-loader and sass-loader which result in proper compiled css array
@@ -46,7 +46,7 @@ declare module "*.scss" {
   export default content;
 }
 
-declare module "*.scss?inline" {
+declare module '*.scss?inline' {
   const content: any;
   // using style-loader will result in an object which is incompatible
   // hence use only css-loader and sass-loader which result in proper compiled css array
