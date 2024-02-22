@@ -80,7 +80,7 @@ Lets convert this lib to application with below steps
 }
 ```
 
-and remove `lib` object from `build` in vite config.
+and remove `lib` section from `build` in vite config as `shell` is not a lib.
 
 6. update `index.ts` in `src` as below:
 
