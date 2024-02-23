@@ -5,7 +5,7 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve shell",
-    "build": "nx build shell && nx generate-env shell",
+    "build": "rimraf dist && nx build shell && nx generate-env shell",
     "serve": "npm run build && serve -s dist/packages/shell"
   },
   "private": true,
@@ -33,6 +33,7 @@
     "msw": "^2.2.1",
     "nx": "18.0.4",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
     "sass": "^1.71.1",
     "serve": "^14.2.1",
     "typescript": "~5.3.3",
