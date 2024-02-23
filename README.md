@@ -299,6 +299,10 @@ your-monorepo/
 └── nx.json
 ```
 
+## TODO
+
+A vscode extension to create nx-plumejs monorepo.
+
 ## Reference links
 
 - https://nx.dev/getting-started/tutorials/integrated-repo-tutorial
