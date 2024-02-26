@@ -6,13 +6,13 @@ import {
 } from '@app/common';
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
-import { AUTH_SERVICE } from './constants';
+import { USERS_SERVICE } from './constants';
 
 @Injectable()
 export class UsersService implements OnModuleInit {
   private userService: UserServiceClient;
 
-  constructor(@Inject(AUTH_SERVICE) private client: ClientGrpc) {}
+  constructor(@Inject(USERS_SERVICE) private client: ClientGrpc) {}
 
   onModuleInit() {
     this.userService = this.client.getService(USER_SERVICE_NAME);

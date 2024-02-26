@@ -43,18 +43,16 @@ $ yarn run test:cov
 ```
 backend/
 ├── apps/
-│   ├── auth/
-│   │   └── src/
-│   │       └── users
+│   ├── users/
 │   └── apigateway/
 │       └── src/
 │           └── users
 ├── libs/
 │   └── common/
 │       └── types/
-│           └── auth.ts
+│           └── users.ts
 ├── proto/
-│   └── auth.proto
+│   └── users.proto
 ├── next-cli.json
 └── package.json
 ```
@@ -62,7 +60,7 @@ backend/
 1. `apps` folder contains a gateway that expose all gRPC methods via rest api.
 
 - `apps/apigateway` => gateway to consume grpc methods via rest api
-- `apps/auth` this contains `UsersModule` that use gRPC transport protocol instead of rest protocol.
+- `apps/users` this contains `UsersModule` that use gRPC transport protocol instead of rest protocol.
 
 2. `libs/common` contains all model definitions that are generated from proto files.
 3. `proto` folder contains definitions for rpc protocall buffers.

@@ -2,7 +2,7 @@
 syntax = "proto3";
 
 // defines which app to be used by this RPC
-package auth;
+package users;
 
 // defines a service with all RPC methods
 service UserService {

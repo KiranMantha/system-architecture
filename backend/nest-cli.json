@@ -22,13 +22,13 @@
         "watchAssets": true
       }
     },
-    "auth": {
+    "users": {
       "type": "application",
-      "root": "apps/auth",
+      "root": "apps/users",
       "entryFile": "src/main",
       "sourceRoot": "./",
       "compilerOptions": {
-        "tsConfigPath": "apps/auth/tsconfig.app.json",
+        "tsConfigPath": "apps/users/tsconfig.app.json",
         "assets": ["proto/*.proto"],
         "watchAssets": true
       }
