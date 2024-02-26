@@ -71,3 +71,35 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+# Setting up:
+
+backend is build on top of nestjs and gRPC. to make use of gRPC, we need to install gRPC on the development machine by following this [guide](https://grpc.io/docs/protoc-installation/)
+
+## Reference links:
+
+- https://www.youtube.com/watch?v=UkWcjVWs2UQ
+
+## Folder structure:
+
+```
+backend/
+├── apps/
+│   ├── auth/
+│   │   └── src
+│   └── apigateway/
+│       └── src
+├── libs/
+│   └── common/
+│       └── types/
+│           └── auth.ts
+├── proto/
+│   └── auth.proto
+├── next-cli.json
+└── package.json
+```
+
+1. `apps` folder contains all microservices. this repo has 2 microservices. `auth` & `apigateway`
+2. `libs` folder contains all reusable logic exposed via modules and services
+3. `libs/common` contains all model definitions this project use.
+4. `proto` folder contains definitions for rpc protocall buffers.

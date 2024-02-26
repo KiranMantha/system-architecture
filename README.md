@@ -4,7 +4,7 @@ This is an repo for system architecture
 
 ![](./application-architecture.png)
 
-Frontend is build on PlumeJS and Backend is build on nestjs.
+Frontend is build on PlumeJS and Backend is build on nestjs & gRPC.
 
 Ports:
 

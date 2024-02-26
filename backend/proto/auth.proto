@@ -1,0 +1,64 @@
+// defines the syntax of proto
+syntax = "proto3";
+
+// defines which app to be used by this RPC
+package auth;
+
+// defines a service with all RPC methods
+service UserService {
+    rpc CreateUser (CreateUserDto) returns (User) {}
+    rpc FindAllUsers (Empty) returns (Users) {}
+    rpc FindOneUser (FindOneUserDto) returns (User) {}
+    rpc UpdateUser (UpdateUserDto) returns (User) {}
+    rpc RemoveUser (FindOneUserDto) returns (User) {}
+    rpc QueryUsers (stream PaginationDto) returns (stream Users) {}
+}
+
+// defines all contracts to be used by this proto:
+// PaginationDto contract
+message PaginationDto {
+    int32 page = 1;
+    int32 skip = 2;
+}
+
+// Empty contract
+message Empty {}
+
+// CreateUserDto contract
+message CreateUserDto {
+    string username = 1;
+    string password = 2;
+    int32 age = 3;
+}
+
+// FindOneUserDto contract 
+message FindOneUserDto {
+    string id = 1;
+}
+
+// UpdateUserDto contract
+message UpdateUserDto {
+    string id = 1;
+    SocialMedia socialMedia = 2;
+}
+
+// User contract
+message User {
+    string id = 1;
+    string username = 2;
+    string password = 3;
+    int32 age = 4;
+    bool subscribed = 5;
+    SocialMedia socialMedia = 6;
+}
+
+// list of users contract
+message Users {
+    repeated User users = 1;
+}
+
+// Social Media contract
+message SocialMedia {
+    optional string twitterUri = 1;
+    optional string fbUri = 2;
+}

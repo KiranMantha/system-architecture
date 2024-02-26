@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  console.log('nestjs started on port: 3002');
-  await app.listen(3002);
+  console.log('apigateway app started on port:', process.env.PORT);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
