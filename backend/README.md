@@ -43,7 +43,7 @@ $ yarn run test:cov
 ```
 backend/
 ├── apps/
-│   ├── users/
+│   ├── users/ (gRPC module)
 │   └── apigateway/
 │       └── src/
 │           └── users
