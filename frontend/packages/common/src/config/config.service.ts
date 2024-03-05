@@ -1,4 +1,4 @@
-import { Injectable } from "@plumejs/core";
+import { Injectable } from '@plumejs/core';
 
 @Injectable()
 export class ConfigService {
@@ -8,5 +8,9 @@ export class ConfigService {
   }
   get<T>(key: string): T {
     return this.envVariables[key] as T;
+  }
+
+  getAll<T>(): Record<string, T> {
+    return this.envVariables as Record<string, T>;
   }
 }

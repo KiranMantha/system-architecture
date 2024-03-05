@@ -14,8 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
+      "@frontend/auth": ["packages/auth/src/index.ts"],
       "@frontend/common": ["packages/common/src/index.ts"],
       "@frontend/product-details": ["packages/product-details/src/index.ts"],
       "@frontend/product-listing": ["packages/product-listing/src/index.ts"],

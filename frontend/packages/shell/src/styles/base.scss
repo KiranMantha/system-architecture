@@ -2,6 +2,25 @@
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .center {
   text-align: center;
+}
+
+header {
+  padding: 8px;
+  background: #efefef;
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
 }

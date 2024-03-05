@@ -1,0 +1,23 @@
+{
+  "name": "auth",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/auth/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/auth",
+        "main": "packages/auth/src/index.ts",
+        "tsConfig": "packages/auth/tsconfig.lib.json",
+        "assets": ["packages/auth/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs auth {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

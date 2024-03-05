@@ -18,7 +18,7 @@ const htmlPlugin = (envVars: Record<string, string>) => {
       return html.replace(/%(.*?)%/g, function (match, p1) {
         return envVars[p1];
       });
-    },
+    }
   };
 };
 
@@ -36,9 +36,9 @@ export default ({ mode }: { mode: string }) => {
       dts({
         entryRoot: 'src',
         // tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-        tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+        tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
         // skipDiagnostics: true,
-      }),
+      })
     ],
 
     // Uncomment this if you are using workers.
@@ -53,22 +53,22 @@ export default ({ mode }: { mode: string }) => {
       reportCompressedSize: true,
       sourcemap: false,
       commonjsOptions: {
-        transformMixedEsModules: true,
+        transformMixedEsModules: true
       },
       rollupOptions: {
         // External packages that should not be bundled into your library.
-        external: [...filesPathToExclude],
-      },
+        external: [...filesPathToExclude]
+      }
     },
     server: {
       host: true,
       port: 3001,
-      open: '/',
+      open: '/'
     },
     test: {
       globals: true,
       cache: {
-        dir: '../../node_modules/.vitest',
+        dir: '../../node_modules/.vitest'
       },
       environment: 'node',
       include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
@@ -76,8 +76,8 @@ export default ({ mode }: { mode: string }) => {
       reporters: ['default'],
       coverage: {
         reportsDirectory: '../../coverage/packages/shell',
-        provider: 'v8',
-      },
-    },
+        provider: 'v8'
+      }
+    }
   });
 };
