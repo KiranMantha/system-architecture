@@ -14,7 +14,7 @@ import { UsersService } from './users.service';
         transport: Transport.GRPC,
         options: {
           package: USERS_PACKAGE_NAME,
-          protoPath: join(__dirname, '../users.proto')
+          protoPath: join(__dirname, '../users/users.proto')
         }
       }
     ])

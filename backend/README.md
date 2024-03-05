@@ -52,7 +52,8 @@ backend/
 │       └── types/
 │           └── users.ts
 ├── proto/
-│   └── users.proto
+│   └── users/
+│       └── users.proto
 ├── next-cli.json
 └── package.json
 ```
