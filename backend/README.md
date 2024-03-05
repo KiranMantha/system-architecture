@@ -36,7 +36,8 @@ $ yarn run test:cov
 
 ## Reference links:
 
-- https://www.youtube.com/watch?v=UkWcjVWs2UQ
+- nestjs-grpc: https://www.youtube.com/watch?v=UkWcjVWs2UQ
+- grpc-chat-app: https://daily.dev/blog/build-a-chat-app-using-grpc-and-reactjs
 
 ## Folder structure:
 
