@@ -42,6 +42,10 @@ export class AppComponent {
   ) {
     Router.registerRoutes({ routes: this.routes });
     authService.init();
+
+    authService.keycloakEvents.subscribe((args) => {
+      console.log(args, new Date().getMinutes());
+    });
   }
 
   mount() {

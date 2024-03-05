@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "generate-runtime-env": "cross-env NODE_ENV=development runtime-env-cra --env-file=./.env",
-    "serve": "yarn generate-runtime-env --config-name=./src/runtime-env.js && vite",
+    "serve": "rimraf ./src/runtime-env.js && yarn generate-runtime-env --config-name=./src/runtime-env.js && vite",
     "generate-env": "yarn generate-runtime-env --config-name=../../dist/packages/shell/runtime-env.js"
   },
   "devDependencies": {
