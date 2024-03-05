@@ -16,8 +16,8 @@ export class AuthService {
 
   constructor(private configService: ConfigService) {}
 
-  get keycloakEvents(): SubjectObs<KeycloakEvent> {
-    return this._keycloakEvents$;
+  get keycloakEvents() {
+    return this._keycloakEvents$.asObservable();
   }
 
   async init() {
