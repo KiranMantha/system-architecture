@@ -1,0 +1,23 @@
+{
+  "name": "grpc-chat",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/grpc-chat/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/grpc-chat",
+        "main": "packages/grpc-chat/src/index.ts",
+        "tsConfig": "packages/grpc-chat/tsconfig.lib.json",
+        "assets": ["packages/grpc-chat/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs grpc-chat {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

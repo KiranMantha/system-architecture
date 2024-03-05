@@ -19,6 +19,7 @@
     "paths": {
       "@frontend/auth": ["packages/auth/src/index.ts"],
       "@frontend/common": ["packages/common/src/index.ts"],
+      "@frontend/grpc-chat": ["packages/grpc-chat/src/index.ts"],
       "@frontend/product-details": ["packages/product-details/src/index.ts"],
       "@frontend/product-listing": ["packages/product-listing/src/index.ts"],
       "@frontend/shell": ["packages/shell/src/index.ts"]

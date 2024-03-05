@@ -49,6 +49,8 @@ export class AuthService {
       this.keycloakEvents.subscribe((event) => {
         if (event?.type === KeycloakEventType.OnTokenExpired) {
           this._instance.updateToken(5);
+        } else if (event?.type === KeycloakEventType.OnAuthLogout) {
+          this.logout();
         }
       });
     } catch (error) {
