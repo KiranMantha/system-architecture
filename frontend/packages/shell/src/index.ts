@@ -53,7 +53,7 @@ export class AppComponent {
     //   console.log(data);
     // });
     this.authService.isLoggedIn().subscribe((flag) => {
-      this.isLoggedIn = flag as boolean;
+      this.isLoggedIn = flag;
     });
   }
 
@@ -109,5 +109,8 @@ export class AppComponent {
 }
 
 setTimeout(() => {
-  render(document.getElementById('root'), html`<app-root></app-root>`);
+  render(
+    document.getElementById('root') as HTMLElement,
+    html`<app-root></app-root>`
+  );
 }, 100);
